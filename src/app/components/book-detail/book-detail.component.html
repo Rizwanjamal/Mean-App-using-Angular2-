@@ -1,0 +1,43 @@
+<div *ngIf="book.title" class="col-md-12">
+  <h1>{{ book.title }}</h1>
+  <dl class="list">
+    <dt>ISBN</dt>
+    <dd>{{ book.isbn }}</dd>
+    <dt>Author</dt>
+    <dd *ngIf="book.author">{{ book.author.name }} - <a (click)="showAuthorDetails = !showAuthorDetails" >Show Details</a></dd>
+    <dt>Publisher</dt>
+    <dd>{{ book.publisher }}</dd>
+    <dt>Price</dt>
+    <dd>{{ book.price }}</dd>
+    <dt>Update Date</dt>
+    <dd>{{ book.updated_at }}</dd>
+  </dl>
+  <div *ngIf="showAuthorDetails">
+    <h1>Author Details</h1>
+    <dl class="list">
+      <dt>Ranking</dt>
+      <dd>{{ book.author.ranking }}</dd>
+      <dt>Total Books</dt>
+      <dd>{{ book.author.total_books }}</dd>
+      <dt>No. Of Awards</dt>
+      <dd>{{ book.author.awards }}</dd>
+    </dl>
+  </div>
+
+  <div class="row">
+  <div class="col-md-12">
+    <a [routerLink]="['/books']" class="btn btn-primary btn-sm">
+      <span class="glyphicon glyphicon-home"></span> Home
+    </a>
+    <a [routerLink]="['/book-edit', book._id]" class="btn btn-success btn-sm">
+      <span class="glyphicon glyphicon-pencil"></span> EDIT
+    </a>
+    <button class="btn btn-danger btn-sm" type="button" (click)="deleteBook(book._id)">
+      <span class="glyphicon glyphicon-trash"></span> DELETE
+    </button>
+  </div>
+</div>
+
+</div>
+
+

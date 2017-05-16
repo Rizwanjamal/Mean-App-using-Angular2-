@@ -1,0 +1,71 @@
+<div class="container">
+<div class="col-md-6 col-md-offset-3">
+  <h1>Add New Book</h1>
+  <div class="row">
+    <div>
+      <form (ngSubmit)="saveBook()" #bookForm="ngForm">
+        <div class="form-group">
+          <label for="name">ISBN</label>
+          <input type="text" class="form-control" #isbn="ngModel" [(ngModel)]="book.isbn" name="isbn" minlength="10" maxlength="13" required>
+          <div *ngIf="isbn.errors?.required && isbn.touched" class="error">
+            ISBN is required
+          </div>
+          <div *ngIf="isbn.errors?.minlength && isbn.touched" class="error">
+            ISBN must be Minimum of 10 characters
+          </div>
+          <div *ngIf="isbn.errors?.maxlength && isbn.touched" class="error">
+            ISBN must be maximum of 13 characters
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Title</label>
+          <input type="text" class="form-control" #title="ngModel" [(ngModel)]="book.title" name="title" minlength="3" maxlength="30" required>
+          <div *ngIf="title.errors?.required && title.touched" class="error">
+            Title is required
+          </div>
+          <div *ngIf="title.errors?.minlength && title.touched" class="error">
+            Title must be Minimum of 3 characters
+          </div>
+          <div *ngIf="title.errors?.maxlength && title.touched" class="error">
+            Title must be maximum of 30 characters
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <select class="form-control" #author="ngModel" [(ngModel)]="book.author" name="author" required>
+            <option *ngFor="let author of authors" [ngValue]="author._id">{{author.name}}</option>
+          </select>
+          <div *ngIf="author.errors?.required && author.touched" class="error">
+            Author is required
+          </div>
+        </div>        
+        <div class="form-group">
+          <label for="name">Publisher</label>
+          <input type="text" class="form-control" #publisher="ngModel" [(ngModel)]="book.publisher" name="publisher" minlength="3" maxlength="10" required>
+          <div *ngIf="publisher.errors?.required && publisher.touched" class="error">
+            Publisher is required
+          </div>
+          <div *ngIf="publisher.errors?.minlength && publisher.touched" class="error">
+            Publisher must be Minimum of 3 characters
+          </div>
+          <div *ngIf="publisher.errors?.maxlength && publisher.touched" class="error">
+            Publisher must be maximum of 10 characters
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Price</label>
+          <input type="number" class="form-control" #price="ngModel" [(ngModel)]="book.price" name="price" onkeypress="return event.charCode > 48" min="1" required>
+          <div *ngIf="price.errors?.required && price.touched" class="error">
+            Price is required
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid">Save 
+              <i *ngIf="loading" class="fa fa-spinner fa-spin fa-fw"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
