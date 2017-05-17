@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var userService = require('../services/user-service');
+var services = require('../services');
 var requireAuthentication = require('./middlewares.js');
 
 /* GET LOGIN */
-router.post('/login', userService.login);
+router.post('/login', services.login);
 
 
 module.exports = router;
