@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Book = require('../models/Book.js');
+var Book = require('../../models/Book.js');
 
 
 class BookService {

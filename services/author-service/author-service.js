@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Author = require('../models/Author.js');
+var Author = require('../../models/Author.js');
 
 
 class AuthorService{
