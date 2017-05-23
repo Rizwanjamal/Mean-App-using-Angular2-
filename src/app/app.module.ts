@@ -31,6 +31,8 @@ import { BookEditComponent } from '../app/components/book-edit/book-edit.compone
 import { AuthorCreateComponent } from '../app/components/author-create/author-create.component';
 import { NotFoundComponent } from '../app/components/not-found/not-found.component';
 import { LoginComponent } from '../app/components/login/login.component';
+import { HeaderComponent } from '../app/components/header/header.component';
+import { FooterComponent } from '../app/components/footer/footer.component';
 
 import { AuthGuard } from '../app/authGuard/auth.guard';
 
@@ -55,7 +57,9 @@ const appRoutes : Routes = [
     BookEditComponent,
     AuthorCreateComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
