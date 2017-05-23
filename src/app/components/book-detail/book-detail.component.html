@@ -27,13 +27,13 @@
   <div class="row">
   <div class="col-md-12">
     <a [routerLink]="['/books']" class="btn btn-primary btn-sm">
-      <span class="glyphicon glyphicon-home"></span> Home
+      <span class="fa fa-home fa-lg"></span> Home
     </a>
     <a [routerLink]="['/book-edit', book._id]" class="btn btn-success btn-sm">
-      <span class="glyphicon glyphicon-pencil"></span> EDIT
+      <span class="fa fa-pencil-square-o fa-lg"></span> EDIT
     </a>
-    <button class="btn btn-danger btn-sm" type="button" (click)="deleteBook(book._id)">
-      <span class="glyphicon glyphicon-trash"></span> DELETE
+    <button class="btn btn-danger btn-sm" type="button" href="" (click)="deleteBook(book._id)">
+      <span class="fa fa-trash-o fa-lg"></span> DELETE
     </button>
   </div>
 </div>
