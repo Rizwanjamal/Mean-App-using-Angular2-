@@ -2,6 +2,9 @@ var bookService = require('./book-service');
 var authorService = require('./author-service');
 var userService = require('./user-service');
 
+
+//Exported Members
+
 module.exports.getBooks       =    bookService.getBooks;
 module.exports.getBook        =    bookService.getBook;
 module.exports.saveBook       =    bookService.saveBook;
