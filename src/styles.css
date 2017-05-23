@@ -1,4 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  font-size: 14px;
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+  margin-right: calc(100% - 100vw);
+}
+
+body {
+  line-height: 1.4;
+}
+
 .error {
   font-size: 13px;
   color: #c7254e;
@@ -11,4 +27,74 @@
 
 .help-block {
     font-size: 12px;
+}
+
+
+#wrapper {
+  min-height: calc(100vh - 122px);
+  padding: 20px;
+}
+
+
+.main {
+  padding-top: 30px;
+  width: 100vw;
+}
+
+
+.main-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+  max-width: 1440px; 
+}
+
+
+.app-footer {
+  font-size: 20px; }
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+
+#footer {
+  color: #fff;
+  width: 100%;
+  height: 75px;
+  background-color: #333333; }
+
+/*#footer > .container {
+  margin: 0 auto; }*/
+
+#footer div#footer-links {
+  padding: 20px 0px 0;
+  text-align: center; }
+
+
+#footer div#footer-links a {
+  color: #FFF;
+  padding: 0px 5px;
+  margin: 0px 5px; }
+
+#footer div#footer-copyright {
+  padding-top: 12px;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+}
+
+#logo {
+  width: 130px;
+  height: 24px;
+}
+
+.nav-item {
+    padding-right: 25px !important;
+}
+
+.hide-visibility {
+  display: none !important;
 }
