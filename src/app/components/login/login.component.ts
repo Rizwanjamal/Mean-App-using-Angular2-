@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { Cookie } from 'ng2-cookies/ng2-cookies';
@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.model.username, this.model.password).then((res) => {
       console.log(res);
       Cookie.set('token', res['token']);
+      Cookie.set('username', res['username']);
       swal(
           'Login Successfully !',
           'Login successfully !',
