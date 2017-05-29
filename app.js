@@ -42,8 +42,15 @@ app.use(function(err, req, res, next) {
 });
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/mean-app')
+if(process.env.NODE_ENV == "production"){
+  mongoose.connect(process.env.MONGOLAB_URL)
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
+
+}else{
+  mongoose.connect("mongodb://localhost/mean-app")
+  .then(() =>  console.log('connection successful'))
+  .catch((err) => console.error(err));
+}
 
 module.exports = app;
