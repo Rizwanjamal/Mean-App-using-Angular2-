@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "postinstall": "ng build -prod",
+    "postinstall": "ng build",
     "start": "node ./bin/www",
     "build": "ng build",
     "test": "ng test",
@@ -15,6 +15,7 @@
   "dependencies": {
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
     "@angular/cli": "1.0.1",
     "@angular/core": "^4.0.0",
     "@angular/forms": "^4.0.0",
@@ -44,7 +45,6 @@
     "npm": "4.5.0"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
