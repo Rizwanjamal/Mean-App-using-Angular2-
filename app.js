@@ -41,14 +41,18 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500).json({err: err});
 });
 
+
+var url = 'mongodb://localhost/mean-app';
+var mlabUrl = 'mongodb://rizwan:jamal@ds155841.mlab.com:55841/book_library';
+
 mongoose.Promise = global.Promise;
 if(process.env.NODE_ENV == "production"){
-  mongoose.connect(process.env.MONGOLAB_URL)
+  mongoose.connect(mlabUrl)
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
 
 }else{
-  mongoose.connect("mongodb://localhost/mean-app")
+  mongoose.connect(url)
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
 }
